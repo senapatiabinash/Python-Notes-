@@ -1,0 +1,154 @@
+EXception Handling :
+----------------------------
+	Each indivisual exception is implemented with the help of class 
+	PVM is responsible to create the object of the coressponding exception class 
+	After creating the object of coressponding exception class 
+	PVM search for handling code / alternative code
+	if alternative code is not found PVM terminate the process in a abnormal way by informing regarding exception. 
+		ExceptionClassName : ExceptionObject 
+
+	keywords used for exception handling 
+		try 			
+		except 			
+		else 			
+		finally 			
+		raise 			
+
+		try : 
+			RISKY CODE 
+		except : 
+			HANDLING CODE / ALTERNATIVE CODE 
+		else : 
+			SUCESS CODE 
+		finally : 
+			CLEAN UP CODE 
+
+		
+		EACH INDIVISUAL EXCEPTION IN PYTHON IS IMPLEMENTED WITH THE HELP OF CLASS MECHANISM. 
+		EACH INDIVISUAL EXCEPTION DIRECTLLY OR INDIRECTLLY INHERITED FROM BaseException CLASS. 
+	
+		inheritance : creating a child class from parent class is known as inheritance mechanism. 
+
+		
+		while working with exception handling mechanism 
+		there are 3 different scenario are expected 
+			. EXCEPTION IS NOT GENERATED 
+				TRY -> ELSE -> FINALLY 
+			. EXCEPTION IS GENERATED AND HANDLED
+				TRY -> EXCEPT -> FINALLY  
+			. EXCEPTION IS GENERATED BUT NOT HANDLED 
+				TRY -> FINALLY -> ABNORMAL TERMINATION 
+Eg  1:
+
+try :
+        # RISKY CODE 
+        print ( 'TRY : ')
+        x = int ( input ( 'Enter x : '))
+        y = int ( input ( 'Enter y : '))
+        print ( 'sum:{} sub:{} mul:{} div:{}'.format ( x+y, x-y, x*y, x/y ))
+
+except ValueError :
+        print ( 'EXCEPT : ')
+        # handling code / alternative code for ValueError 
+        print ( 'sir, please provide int type value in input !')
+
+else :
+        # success code 
+        print ( 'ELSE : ')
+        print ( 'thanks god, there is no any exception found in my process !')
+
+finally :
+        # clean up code 
+        print ( 'FINALLY : ')
+        print ( 'thank you sir!, please visit again !')
+
+
+EXCEPTION IS NOT GENERATED : 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[litindia@localhost demo]$ python3 test.py 
+TRY : 
+Enter x : 20
+Enter y : 10
+sum:30 sub:10 mul:200 div:2.0
+ELSE : 
+thanks god, there is no any exception found in my process !
+FINALLY : 
+thank you sir!, please visit again !
+
+EXCEPTION GENERATED AND HANDLED :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[litindia@localhost demo]$ python3 test.py 
+TRY : 
+Enter x : 20
+Enter y : ten
+EXCEPT : 
+sir, please provide int type value in input !
+FINALLY : 
+thank you sir!, please visit again !
+
+EXCEPTION GENERATED AND NOT HANDLED :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[litindia@localhost demo]$ python3 test.py 
+TRY : 
+Enter x : 20
+Enter y : 0
+FINALLY : 
+thank you sir!, please visit again !
+Traceback (most recent call last):
+  File "test.py", line 7, in <module>
+    print ( 'sum:{} sub:{} mul:{} div:{}'.format ( x+y, x-y, x*y, x/y ))
+ZeroDivisionError: division by zero
+[litindia@localhost demo]$ 
+
+Eg 2:
+
+try :
+        # risky code 
+        x = int ( input ( 'Enter x : '))
+        y = int ( input ( 'Enter y : '))
+        print ( 'sum:{} sub:{} mul:{} div:{}' . format ( x+y, x-y, x*y, x/y ))
+
+except ValueError :
+        # handling code 
+        print ( 'Please provide int type of value in input !' )
+
+except ZeroDivisionError :
+        print ( 'Please dont provide ZERO in second input !')
+
+else :
+        # sucess code 
+        print ( 'Thanks god, there is no any exception in my process !')
+
+finally :
+        # clean up code 
+        print ( 'Thanks user, please visit again !')
+
+	we can implement multiple except block for try block. 
+	can we handle multiple exception by implementing single except block. 	YES 
+		syntax : 
+			try : 
+				risky code 
+			except ( ExceptionClass1 , ExceptionClass2 . . ) : 
+				handling code 
+eg:
+
+try :
+        # risky code 
+        x = int ( input ( 'Enter x : '))
+        y = int ( input ( 'Enter y : '))
+        print ( 'sum:{} sub:{} mul:{} div:{}' . format ( x+y, x-y, x*y, x/y ))
+
+except ValueError :
+        # handling code 
+        print ( 'Please provide int type of value in input !' )
+
+except ZeroDivisionError :
+        print ( 'Please dont provide ZERO in second input !')
+
+else :
+        # sucess code 
+        print ( 'Thanks god, there is no any exception in my process !')
+
+finally :
+        # clean up code 
+        print ( 'Thanks user, please visit again !')

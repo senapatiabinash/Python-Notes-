@@ -1,0 +1,124 @@
+DICT CLASS / DICT DATA TYPE / DICT DATA STRUCTURE 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	BASIC 
+		. dict is a predefined class in python. 
+		. to get the mannuel of dict class, 
+		>>> help ( dict )
+	. how to create the object of dict class, 
+			
+		. dict object is represented by {} 
+		. dict is a collection of elements seprated by , . 
+		. each element hava key and value separated by : 
+		. value can be any kind of object 
+		but key must be HASHABLE TYPE OBJECT( number, bool , NoneType, str , tuple ..) permited as key for dict But list, set , dict type object is not permited as keys for dict
+		. dict is a mutable object So dict object can be modified in future as per the demand of situation. 
+		. dict object support item assignment and item deletion. 
+		. to get the number of elements aval in dict object we can use len () function in python. 
+		. duplicate keys are not allowed for dict object if we will provide duplicate keys it's not an error it will takes the last value.
+		. values can be duplicate in a dict. 
+
+	KEYS : 
+		. indexing mechanism is not supported witch dict object  
+		. to target a specific element insted of index we have to use keys with subscript oprator.
+			listObj [ index ] / tupleObj [ index ] / strObj [ index ]
+			dictObj [ key ]
+			. index vs keys 
+				index is not decided by user but key is decided by user 
+	
+ex: 				index must be an integer object  but key must be hashable type object ( int , float , complex , str , tuple , forzenset )
+obj = {}
+print (type (obj), obj) #dict
+
+obj1 = {1,2,3}
+print (type (obj1), obj1 )  #set
+
+obj2 = dict ()
+print (type (obj2), obj2)
+
+obj3 = {"regno ": 1 , "name":"raj", "dept" :"cs", "name" :"rajani","slno" :1 }
+print (type (obj3), obj3)
+
+obj4 = {"regno":True}
+print (type (obj4), obj4 )
+
+	OPERATORS 
+		all the operators aval in python is not going to supported with dict object. 
+				
+		some limited operators will be supported with dict object, 
+			
+		no arithmatic 
+		some relational operator 	== != 
+		membership operator 		wroks accroding to keys 
+			in 
+			not in 	
+		identity Operators
+			is 
+			is not 
+	
+		no slicing operator 		due to dict does not support index 
+			
+	FUNCTIONS : 
+		all predefined function aval in python works according keys for dict. 
+
+		len () 
+		min () 
+		max () 
+		sum () 
+		sorted () 
+				
+				
+	METHODS 
+		deletion 
+			pop () 	: to delte a speicific element 
+			popitem () 	: to delete from last in first order 
+			clear () 	: to delete all elements 
+		insertion 
+			setdefault () : insert a key in dict if key is not aval previoully 
+			update () 	: insert mutiple keys and values 
+		CREATION 
+			fromkeys () : to convert list object to dict object 
+		read 
+			get () 	: to target a specific value by using key 
+			keys () 	: to get the list of keys 
+			values () 	: to get the list of values 
+			items () 	: to convert a dict to list of tuples 
+							[ ( k1 , v1) , ( k2, v2 )]
+			copy() 	:  make copy of old object  					
+
+ex :
+obj = {"regno" :"litpy01", "name":"rajani kant", "age" : 30 , "gender" :"male", "dept":"CS" }
+print (type (obj), obj)
+
+obj1 = obj .copy ()
+print ("aftre copy obj1 =",type (obj1), obj1)
+
+obj1. clear ()
+print ("after clear obj1 =", obj1 )
+
+
+print (obj.items () )
+print ("list of keys=", obj.keys () )
+
+print ("list of value =", obj.values() )
+
+obj.popitem()
+print (obj )
+
+obj.pop ("age")
+print ("after pop age ", obj)
+
+print (obj. get ("name")) #rajani kant 
+
+print (obj. get ("lname")) #None 
+
+obj .setdefault ("hostel")
+
+print ("after set default hostel: ", obj )
+obj.update ({"hostel": True})
+obj.update  ({ "result":"1st div", "dept": "cs" })
+print ("after update hostel: ", obj )
+
+Nested Dict :
+studentdict = { "slno": 1 , "name" : {"fname" :"raj", "midname":"kumar", "lname":"das"}, "gender":"Male", "contno":{ "mobile": 9437094370, "landno":"0674-287270"}, "exam": {"internal" : {"c":45, "cpp": 67}, "sem" :{"c": 78, "cpp":89, "python" :77} }  }
+print (type (studentdict), studentdict)
+

@@ -1,0 +1,84 @@
+
+
+--------------------------------------------------------------------------------------------------
+CRUD (Create,Retrive,Update,Delete)
+Query for database:
+	show all db list:
+			SHOW databases;
+	Create a new db:
+			CREATE database db_name;	
+	Delete db:
+			Drop database db_name;
+	Select db:
+			USE db_name;
+
+Query for table: ( )
+----------------------
+		
+	Show list of all Tables with in a database:	
+		SHOW tables;
+	Create a Table :
+		CREATE table table_name (column_name1 datatype[size],column_name2 datatype[size],......);
+	Insert Command:
+
+		Insert Record for all column value:
+			insert into table_name values (val1,val2,.....) ;
+		Insert Record for specific column:
+			insert into table_name (col_name1,col_name2,...) values (val1,val2,val3,.....) ;
+	Select Command :
+
+		Fetch record from table(all column value):
+			select * from table_name where [condition]; * means all column
+		Fetch record from table(specific column):
+			select col_name1,col_name2,....... from tabel_name where[condition];
+	Alter Command :
+		Add a column into a table:
+			alter table table_name add column column_name datatype[size]  [after clumn_name] ;
+		Remove a column:
+			alter table table_name drop column column_name;
+		How channge datatype & size:
+			alter table table_name modify column_name newdatatype [size];
+	Update Command :
+		Update a record:
+			update table_name set col_name1 = value1, col_name2 = value2 where[condition] ;
+
+	Delete a record:
+		Delete all record:
+			delete from table_name;
+		Delete specifice record:
+			delete from table_name where [condition];
+	Delete a table:
+		drop table table_name;
+
+	Rename a table:
+		rename table old_table_name to new_table_name;
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

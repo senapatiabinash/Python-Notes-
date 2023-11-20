@@ -1,0 +1,67 @@
+Anonymous Function :
+--------------------------
+	some time we can declare a function without any name, and this type of nameless function is known as anonymous function / lambda function .
+	the main purpose of anonymous function is just instant use .
+
+	in python function is basically two types. 
+		. STANDARD FUNCTION 
+		. LAMBDA FUNCTION 
+	
+			STANDARD FUNCTION 	VS 	LAMBDA FUNCTION 
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		. to define standard function 		. to define lambda function 
+		def keyword is used in python. 		lambda keyword in used in python. 
+
+		.syntax 				syntax 
+		def <FunctionName> ( p1, p2 . . pn ) : 
+			expressions 			FunctionName = lambda p1, p2 . . pn : expression 
+			statements 
+	
+		. standard function supports 		. lambda function does not support statements 
+		expression and statements 		it supports only expression 
+		
+		. multi line block 			. single line block 
+	
+		. indentation 				. indentation is notallowed for lambda function 
+
+		. function name is compulsory		. function name is OPTIONAL to define lambda function. 
+		to define standard function. 
+	
+		. anonymus function is not permited 	. anonymus function is permited 
+	
+C++ / Java 
+	anonymus object : THE OBJECT HAVING NO ANY NAME 
+
+def standardHello () :
+        return 'hello sir i am standard function !'
+
+lambdaHello = lambda :  'hello sir i am lambda function !'
+
+
+print ( standardHello () )
+print ( lambdaHello () )
+
+	lambda Function :
+	------------------------
+	we can define by using lambda keyword .
+		syntax :
+			lambda argumet list : expression 
+	by default it return value , do not write return key word inside lmbda function .
+	
+Ex :
+----
+Write a program to create lambda function   to find square of given number 
+
+lambda n : n* n
+print ("the square of 4 is ", s(4))
+print ("the square of 5 is ", s(5))
+
+write a program to crarte a lambda functo to find sum of two number
+
+s= lambda a, b :a+b
+print ("sum of 10,20 are ", s(10,20))
+
+write a lambda function to get max between two number
+s= lambda a, b: a if a> b else b
+print ("max of two number is", s(10,20))
+

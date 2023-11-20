@@ -1,0 +1,127 @@
+
+core python : 
+	
+	introduction 
+	operators 
+	data types 
+	control structure 
+	control statement 
+
+	FUNCTION : 
+	~~~~~~~~~~~~~~
+	WHAT IS FUNCTION 
+	~~~~~~~~~~~~~~~~~
+		. function is collection of expression and statements. 
+
+	HOW TO DEFINE A FUNCTION IN PYTHON 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		. to define a function in python `def` keyword we have to use. 
+		
+		. to define the body of a function in python INDENTATION mechanism will be used. 
+
+		. to define empty body we can use pass control statement. 
+
+		. syntax : 
+			
+			def FunctionName ( ) : 
+				body  
+		. syntax : 
+			
+			def FunctionName ( ) : 
+				pass  
+	
+		. the name which is used to represent a function is known as IDENTIFIER. 
+	
+		. function name is depends on user as per the demand of situation. 
+ex : 
+def Test() : #defiantion 
+	print ("i am fun")	 
+
+	MAIN FUNCTION IN PYTHON 
+	~~~~~~~~~~~~~~~~~~~~~~~
+		. in c cpp java program starts execution from main function. 
+	
+		. main function defination is compulsory in c cpp java. 
+
+		. main is a special function in c cpp java. 
+
+		. in python main is an ordinary function. 
+	
+		. in python program does not starts execution from main. 
+	
+		. main function defination is not compulsory in python. 
+
+	HOW TO EXECUTE A FUNCTION IN PYTHON ( HOW TO CALL ) : 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		. function defination is not sufficient to execute a function. 
+		. to execute a function, with defination, call is requrired. 
+		. untill function is not called, that function is not going to execute. 
+		. FUNCTION DEF MUST BE AVAL BEFORE THE FUNCTION CALL, due to python is an interpreted programming language. 
+
+		. if we call a function N times that function will execute N times. 
+ex : 
+def Test() : #defination
+	print ("i am fun")
+Test () #calling
+
+	CONTROL FLOW DURING FUNCTION DEF AND CALL 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+def main () :                           # stmt-1
+        print ( 'i am main !')          # stmt-2
+        bbsr ()                         # stmt-3
+
+def bbsr () :                           # stmt-4
+        print ( 'i am bbsr !')          # stmt-5
+
+main ()                                 # stmt-6
+
+# CONTROL FLOW : STTM 1 -> 4 -> 6 -> 2 -> 3 -> 5 
+
+	while working with function 
+		variable is besically two types in python, 
+			. GLOBAL VARIABLE 
+			. LOCAL VARIABLE 
+
+
+Function :
+----------------------------------
+	while working with function variable is besically two types in python, 
+		. GLOBAL VARIABLE 
+		. LOCAL VARIABLE 
+		
+		GLOBAL VARIABLE : 
+		~~~~~~~~~~~~~~~~~~~
+		. if a variable is not belongs to any function that var is known as global var. 
+			
+		. global var is not belongs to any function but any function can enjoy global var. 
+var = 10
+def main () :
+        print ( 'i am main enjoying ' , var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )
+
+
+		. any function can enjoy global var, but can not modify the global var. 
+	
+		. if we try to modify the global var from a function it will raise UnboundLocalError exception. 
+var = 10
+def main () :
+        var = var + 10  # modify the global data  
+        print ( 'i am main enjoying ' , var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )
+
+		. to avoid UnboundLocalError exception while modifying the global var we have use `global` keyword. 
+	
+		. if a function modified the global var that modification is going to reflect in other function also. 
+var = 10
+def main () :
+        global var
+        var = var + 10  # modify the global data  
+        print ( 'i am main enjoying ' , var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )

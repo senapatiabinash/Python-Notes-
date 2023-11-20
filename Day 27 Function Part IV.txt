@@ -1,0 +1,52 @@
+ function defination is not allowed inside another function in c cpp java, but this is premited in python. 
+	
+. nested function mechanism is not supported in c cpp java but this is supported in python. 
+def main () :
+        print ( 'i am main !')
+        def fun () : #nested fun
+                print ( 'i am local fun to main !!!')
+        fun ()
+        bbsr (  )   
+
+def bbsr (  ) :     
+        print ( 'i am bbsr !')
+       
+main ()
+
+	. in python we can use function as actual param also as formal param 
+	thats why function is technically called FIRST CLASS OBJECT. 
+
+def main () :
+        print ( 'i am main !')
+        def fun () :
+                print ( 'i am local fun to main !!!')
+        fun ()
+        bbsr ( fun )    # actual param 
+
+def bbsr ( fun ) :      # formal param 
+        print ( 'i am bbsr !')
+        fun ()
+
+main ()
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	. nested function can enjoy the attr of that function where it is nested without gobal keyword or parameter mechanism. 
+
+	. nested function is not permited to modify the attr of that function where is it nested, if try to modify it will raise UnboundLocalError exception. 
+
+	. to modify the attr by nested function of that function where it is nested nonlocal keyword is used in python. 
+
+def function () :
+
+        var = 10
+
+        print ( 'i am function enjoy ' , var )
+
+        def nestedFunction () :
+                nonlocal var
+                var = var + 10
+                print ( 'i am nested function enjoy ', var )
+
+        nestedFunction ()
+
+function ()

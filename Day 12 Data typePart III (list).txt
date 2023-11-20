@@ -1,0 +1,132 @@
+LIST DATA TYPE / LIST CLASS 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Basic :
+	*. list is a predefined class aval in python 
+	*. to get the mannual of list class, 
+		>>> help ( list )
+	*. list is a collection of similar or dissimlary types of elements/objects. 
+	 list object is python is represented by [] 
+	*. each element aval in list object must be separated  by coma
+	*. how to create the object of list class, 
+		obj = list ()
+		print ( obj , type ( obj ))
+
+		obj = list ( [ 11, 22, 33 ] )
+		print ( obj , type ( obj ))
+
+		obj = [ 11, 22, 33, 44 ]
+		print ( obj , type ( obj ))
+
+		obj = [ 11, 1.2, 1+2j, True , None ]
+		print ( obj , type ( obj ) )
+				
+	*.
+ 	*. list store the element according to insertion order. 
+	*. list is an ordered data structure. 
+	*. list supports duplicate element. 
+	*. to get the number of elelents aval in a list object we can apply len () function
+	*. list object is a mutable object in python because we can modify the list object.
+
+Indexing :
+	*. index is used to perfrom read write update and delete a specific element in a list object. 
+	*. to provide index with list object, we have to use subscript operator. 
+					listObj [ index ]
+	*. index must be an integral const 
+	*. valid index starts from 0 to len - 1 
+	*. invalid index raise IndexError .  
+	*. list supports -ve index . 
+	*. -ve index starts from -len to -1 
+	*. by using index we can modify a list object in future as per the demand of situation. 
+obj = [ 11, 22, 33, 44, 55 ]
+print ( obj )
+
+# write or update operation 
+obj [ 2 ] = 300
+
+# read operation 
+print ( obj [ 0 ] )
+print ( obj [ 1 ] )
+print ( obj [ 2 ] )
+print ( obj [ 3 ] )
+print ( obj [ 4 ] )
+
+print ( obj [ 0 ])
+#print ( obj [ 0.0 ])           #TypeError 
+#print ( obj [ 10 ])            #IndexError 
+
+OPERATORS : 
+	Basic 
+
+	*. all the operators aval in python is not going to supported by list object 
+	
+	*. list object supports some limited operators 
+				
+		. ARITHMATIC 	+ *
+			+ 	merging 
+			* 	repetation 
+		. RELATIONAL 	< > <= >= == != 
+					
+			relational operator returns bool type object ( True / False )
+
+			Whenever we are using comparison operators(==,!=) for List objects then the following 
+			should be considered
+ 			1. The number of elements
+ 			2. The order of elements
+ 			3. The content of elements (case sensitive)
+			Note: When ever we are using relatational operators(<,<=,>,>=) between List objects,only first element comparison will be performed.
+		
+		ASSIGNMENT :
+			=	-> it create a copy of list object 
+ 
+		. MEMBERSHIP 	in 	not in
+	
+			membership operator returns bool type object 
+
+		. IDENTITY 	is 	is not
+
+			identity operator returns bool type object 
+
+obj1 = [ 11, 22, 33 ]
+obj2 = [ 44, 55 ]
+obj = obj1 + obj2
+print ( obj1 , obj2 , obj )
+print ( obj * 3 )
+
+obj1 = [ 1, 2, 5, 4 ]
+obj2 = [ 1, 2, 3, 10 ]
+print ( obj1 < obj2 )
+
+print ( 11 in [ 11, 22, 33 ] ) #True 
+print ( 55 in [ 11, 22, 33 ] )#False
+print ( 55 not in [ 11, 22, 33 ] )#True 
+
+obj1 = [11, 22, 33]
+obj2 = [11, 22, 33]
+
+print (obj1 is obj2)#False 
+obj3 = obj1
+print (obj1 is obj3)#True
+print (obj1 is not obj2) #True
+print (obj2 is obj3)#False
+
+Ex :
+obj1 = ['dog', 'cat', 'tiger']
+obj2 = ['Dog', 'cat', 'tiger']
+
+print (obj1 >  obj2 )
+print (obj1 !=   obj2 )
+print (obj1 ==   obj2 )
+
+x = [2,6,4]
+y = [3,4,6]
+z = [0, 6, 4]
+print ( x > y )
+print ( x != z )
+
+x1 =['dag']
+x2= ['dah']
+print (x1 > x2 ) #false 
+
+print (x2 >  x1 ) #True 
+
+

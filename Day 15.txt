@@ -1,0 +1,188 @@
+bytes Data Type:
+	bytes data type represens a group of byte numbers just like an array.
+ex :
+x = [10,20,30,40] 
+b = bytes(x)
+
+Conclusion 1:
+	The only allowed values for byte data type are 0 to 256. By mistake if we are trying to provide any other values then we will get value error.
+
+Conclusion 2:
+	Once we creates bytes data type value, we cannot change its values,otherwise we will get TypeError.
+>>> x=[10,20,30,40] 
+>>> b=bytes(x) 
+>>> b[0]=100  #TypeError: 'bytes' object does not support item assignment
+
+bytearray Data type:
+	bytearray is exactly same as bytes data type except that its elements can be modified.
+ex : 
+x=[10,20,30,40] 
+b = bytearray(x)
+print (b)
+x[1] = 200
+print (b)
+
+
+tuple data type / tuple class / tuple data structure 
+-----------------------------------------------------
+	BASIC :
+		. tuple is a predefined class in python. 
+		. to get the manual of tuple class, 
+			>>> help ( tuple )
+		. tuple is a collection of similar and disimilar types of objects. 
+		. how to create the object of tuple class
+ 
+obj = tuple ()
+print ( obj , type ( obj ))
+
+obj = tuple ( (10, 20, 30) )
+print ( obj , type ( obj ))
+
+obj = ( 10, 20, 30, 40 )
+print ( obj , type ( obj ))
+
+# SPECIAL 
+obj = 10, 20, 30, 40, 50
+print ( obj , type ( obj )) 
+		
+# class tuple 
+obj = ( 10 )
+print ( obj , type ( obj ))# class int
+					
+obj = ( 10 , )
+print ( obj , type ( obj ))		# class tuple 
+ 
+		. tuple object is represented by () 		 
+		. elements aval inside tuple object must be separated by coma , 
+		. tuple store the element as per the insertion order. 
+		. tuple is an ordered data structure. 
+		. tuple supports duplicate elements. 
+		. to get the number of elements aval inside tuple object, we can use len () function in python. 	
+		. TUPLE OBJECT DOES NOT SUPPORT ITEM ASSIGNMENT or ITEM DELETION.  
+		. we can not modify a tuple object in future 
+		. tuple object is an immutable object in python. 
+				
+	INDEXING 
+		. to target indivisual element we can use index mechanism with tuple object
+		. to provide index with tuple object we have to use subscript operator [] 
+				syntax : 	tupleObj [ index ]
+		. by using index we can perform only read operation with tuple object 
+		. by using index we can not perform write / update and delete operation with tuple object. 
+		. +ve index 0 to len - 1 
+		. -ve indes is also supported with tuple object. 
+		. -ve index -len to -1 
+		
+	
+	OPERATORS
+		all the operators aval in python is not going to supported with tuple object .
+	
+		some limited operators are going to supported with tupe object  
+				
+		. ARITHMATIC 
+			+ 	merging 	
+					* 	repetation 
+		. RELATIONAL 
+			< > <= >= == != 
+			
+		. MEMBERSHIP 
+			in 	not in 
+			returns bool type object ( True / False )
+
+				
+		. SLICING 
+			REGULAR SLICING 
+				[ startIndex : stopIndex ]
+			EXTENDED SLICING 
+				[ startIndex : stopIndex : stepIndex ]
+# arithmatic 
+obj1 = ( 10, 20 )
+obj2 = ( 30, 40, 50 )
+obj = obj1 + obj2
+print ( obj , type ( obj ))
+print ( obj * 3 )
+
+# relational 
+obj1 = ( 1, 2, 4, 3 )
+obj2 = ( 1 ,2, 3, 5 )
+print ( obj1 < obj2 )
+
+# membership 
+print ( 11 in ( 11, 22, 33 ))
+
+
+
+obj = ( 10, 20, 30, 40, 50 )
+print ( obj [ 1 : 4 ] )
+print ( obj [ 1 : 4 : 2 ])
+ 
+	
+			FUNCTIONS
+				. len ( ) 
+				. max () 
+				. min () 
+				. sum () 
+				. sorted () 
+				
+print ( len ( obj ))
+print ( max ( obj ))
+print ( min ( obj ))
+print ( sum ( obj ))
+print ( sorted ( obj ))
+print ( sorted ( obj , reverse = True ))
+			
+			METHODS 
+			~~~~~~~~~~~~~~~~~
+			. count method 
+					count () 
+
+			. index method 
+					index () 
+
+				.
+
+obj = ( 10, 20, 30, 40, 50, 10, 100, 200 )
+
+print ( 'counting 10 in my object : ', obj . count ( 10 ))
+
+print ( 'FIRST OCCURANCE index of 10 in my object : ', obj . index ( 10 ))
+print ( 'IN BETWEEN 1 T0 6 index of 10 in my object : ', obj . index ( 10, 1, 6  ))
+
+
+			LIST DATA STRUCTURE 	Vs	TUPLE DATA STRUCTURE 
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+		. [] IS USED TO REPRESENT LIST OBJECT 	. () IS USED TO REPRESENT TUPLE OBJECT 
+		. LIST SUPPORTS ITEM ASSIGNMENT 	. TUPLE DOES NOT SUPPORT ITEM ASSIGNMENT 
+		. LIST SUPPORT ITEM DELETION 		. TUPLE DOES NOT SUPPORT ITEM DELETION 
+		. LIST IS MUTABLE OBJECT 		. TUPLE IS AN IMMUTABLE OBJECT 
+		
+
+
+
+
+
+
+
+
+BOOL TYPE
+	~~~~~~~~~~
+	. bool is a predfined class aval in python
+	. to get the mannual of bool class, 
+	>>> help ( bool )
+	
+	. python is itself responsible to create the object of bool class 
+	. True and False are the object of bool class created by python / PVM. 
+			
+	 objectName = bool () 
+					
+	. bool class can not be used to create object but we can use to implement type conversion.
+
+	>>> obj =bool()
+	>>> type (obj) , obj
+	(<class 'bool'>, False)
+	>>> obj = bool (True)
+	>>> type (obj), obj
+	(<class 'bool'>, True)
+	>>> obj = False
+	>>> type (obj), obj
+	(<class 'bool'>, False)

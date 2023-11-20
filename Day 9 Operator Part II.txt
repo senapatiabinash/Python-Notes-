@@ -1,0 +1,192 @@
+BITWISE OPERATOR 
+~~~~~~~~~~~~~~~~~~~~~~
+				
+	& | ^ >> << ~ 
+	
+	bitwise operator takes input in dec process in binary prvide output in dec 
+	
+	PROCESSING LOGIC OF BIT WISE OPRATOR WORKS WITH BINARY. 	
+
+	INPUT DEC	-> PROCESS BINARY -> OUTPUT DEC 
+	
+	how to convert dec to bin 
+		bin () is used in python to convert dec to bin 
+				
+			bin ( 5 )		-> 	101 
+			bin ( 10 )		-> 	1010 
+
+			how to convert bin to dec 
+	
+			0b101 	-> 	5 
+			0b10101	-> 	10 
+
+					&	|	^ 		
+			0 	0 	0	0	0
+			0 	1 	0	1	1
+			1 	0 	0	1	1
+			1 	1 	1	1	0
+
+			
+ex :
+res1 =  5 & 3
+print ("bit wise and =", res1 ) # 1
+res2 =  5 | 3
+print ("bit wise or  =", res2 ) # 7
+res3 =  5 ^ 3
+print ("bit wise xor =", res3 ) # 6
+
+	>>
+				in right shift operation 
+				delete bits from right side 
+				add 0 in left side. 
+			rs = no / 2 ^ shift bit 
+	
+			. << 
+				in left shift operation 
+				dont delete bits from left 
+				add 0 in right 
+			ls = no * 2 ^ shift bit 
+			.  ~
+				res = -N - 1
+				~ N == - N - 1 
+RELATIONAL OPERATOR : 
+		
+			
+	. relational operator always return bool type object. 
+	. in python True and False are the object of bool type. 
+	. python is case sensitive. 
+ex :
+x = 5 
+y = 6 
+res = x != y 
+print (res)  #True		.
+	. in python we can implement chaining of relational operator. 
+	 But chaning of relational operator in not supported by c cpp and java 
+	
+	. if all the condition is True in that chain of relational operator then the final response is expected True. 
+
+	. if a single condition is False in that chain of relational operator then the final response is expected False. 
+ex :
+x = 5
+y= 5
+z= 5
+if  x == y == z :
+	print ("hello")
+else :
+	print ("bye")
+O/p : hello 
+
+x == y == z 		#True
+not same as ( x == y ) == z 	#False
+not same as x == ( y == z ) 	#False
+same as ( x == y ) and ( y == z )	#True
+				
+>>> 1 < 2 > 1 != 0 < 2 == 2 < 5 > 1 >= 0 <= 10 
+True
+>>> 1 < 2 > 1 != 0 < 2 == 2 > 5 > 1 >= 0 <= 10 
+False
+
+
+logical operator 
+		
+	logical operator is used avoid nested control structure. 
+	by using logical operator we can bind multiple conditions. 		
+			
+	logical operator allways returns bool type object. 
+	True and False are the objects of bool type in python. 
+
+	in c cpp java 		python 
+	&& 			and 
+	||			or 
+	!			not 
+----
+>>>x = 10 
+>>>y = 20 
+>>>z = 0 
+>>>print (x and y)
+20
+>>>print (x or y)
+10
+>>>print (x and z)
+0
+
+Ex :
+time = int(input ("Enter working time "))
+if (time >=8  and time <= 12 ) :
+	print ("valid working time")
+else :
+	print ("invalid working time ")
+
+
+
+CONDITIONAL OPERATOR 
+
+	any program solved using IF ELSE control structure that program can be solved using conditional opdrator. 
+				
+	in c cpp java ? : is treted as conditional operator. 
+	conditional operator is a ternary operator.
+	for conditional operator 3 operands are requried. 
+	
+	condition ? if_task : else_task ;		-> in C , C++, java
+	
+	in python ?: is updated to if else 
+		?	-> 	if 
+		:	-> 	else 
+	Synatx :		
+	<if_task> if <condition>  else <else_task> ;
+Ex 1:
+				
+no = int ( input ( 'Enter a number : '))
+print ( 'i am even !' if no % 2 == 0 else 'i am odd !')	
+Ex 2:
+no = int ( input ( 'Enter a number : '))
+print ( '+ve number' if no > 0 else '-ve number')
+
+Ex 3:
+x = int ( input ( 'Enter x : '))
+y = int ( input ( 'Enter y : '))
+max = x if x > y else y
+print ( max )	
+
+Assignment & Compound assignment  pre -> 12 , Ass -> R to L
+------------------------------------------------------------------------------------
+x= int (input ("Enter x value "))
+y= int (input ("Enter y value "))
+print ("before swap x =", x ,"  ", "y = ", y )
+'''
+temp  = x 
+x = y 
+y = temp
+
+x = x+ y 
+y = x - y 
+x = x - y 
+
+x = x ^ y 
+y = y ^ x 
+x = x ^ y 
+ 
+x ^= y  
+y ^= x 
+x ^= y 
+'''
+x, y = y, x
+
+print ("aftre swap x =", x ,"  ", "y = ", y )
+
+ex:
+x = 10
+print ("x value =", x ) # 10 
+x += 10    #x = x + 10 
+print ("x value =", x ) # 20
+
+y = 5
+print ("value of  y ", y )
+y /= 5   #y = y / 5 
+print ("value of  y ", y )
+	
+				
+	
+					
+				
+				

@@ -1,0 +1,99 @@
+EXCEPTION HANDLING :
+---------------------------------------
+	exception handling is used to define alternative ways to achive the task. 
+
+	in python error is basically two types, 
+		. compile time error / syntax error 
+		. run time error / exception
+
+	PROCESS : 
+		when program starts execution it becomes a process. 
+			or 
+		the running instance of a program is known as process. 
+
+		what is the behaviour of syntax error 
+
+			syntax error does not permit to start the process. 			
+
+		what is the behaviour of exception 
+			
+			exception permits to start the process but does not permits to complete the process.
+
+	SYNTAX ERROR : 
+	~~~~~~~~~~~~~~~~~~
+	. compile time error is alos known as syntax error in python. 	
+	. syntax error does not permit to start the process. 
+	. types of syntax error :
+		SyntaxError 
+		IndentationEror 
+		TabError 
+	. what is the reason for syntax error : 
+		missing parenthesis 
+		missing ' or " EOL 
+		missing control char : 
+		indentation mistake 
+		invalid syntax
+	. for syntax error programmer is itself responsible 
+	. programmer itself responsible to resolve syntax error  by editing the program.  
+
+	EXCEPTION : 
+	~~~~~~~~~~~~~~~~~~
+	. run time error is also known as exception. 
+	. exception permits to start the porcess but does not permits to complete the process. 
+	. what are the types of exeption aval in python, 
+		NameError 
+		ValueError 
+		TypeError 
+		AttributeError 
+		IndexError 
+		KeyError
+		ZeroDivisionError  
+		etc 
+	. what is the reason for exception 
+		. invalid input 
+		. invalid logic 
+	. client / user is responsible for exception
+	. to handle exception programmer is responsible.
+	. when exception raised in python process will be terminated in a abnormal way without completing the process. 
+	. exception handling is used to define alternative ways   to achive the objective / complete the process in a normal way. 
+
+print ( 'process is started !')
+x = int ( input ( 'Enter x : '))
+y = int ( input ( 'Enter y : '))
+
+print ( 'sum:{} sub:{} mul:{} div:{}' . format (
+        x+y , x-y, x*y, x/y ))
+print ( 'process is completed !')
+
+
+types of exception : 
+	
+	NameError 
+	ValueError 
+	TypeError 
+	AttributeError 
+	ZeroDivisionError 
+	IndexError 
+	KeyError 
+	FileNotFoundError 
+	ImportError 
+	ModuleNotFoundError 
+	etc. 
+
+print ( 'process is started !')
+
+# print ( var )                                         NameError 
+# print ( 10 + 'five' )                                 TypeError 
+# x = int ( 'ten' )                                     ValueError 
+# tuple () . append ( 10 )                              AtrributeError 
+# print ( 10/0 )                                        ZeroDivisionError 
+
+# print ( [ 10, 20, 30 ] [ 5 ] )                        IndexError 
+# print ( { 1 : 11 , 2 : 22 , 3 : 33 } [ 1.5 ] )        KeyEror 
+
+# from sys import argv, argc                            ImportError 
+# import moduleNotAval                                  ModuleNotFoundError 
+
+# print ( open ( 'xyz.txt' , 'r' ) . read () )          FileNotFoundError 
+
+print ( 'process is completed !')

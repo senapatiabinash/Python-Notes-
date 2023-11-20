@@ -1,0 +1,103 @@
+tTypes OF Arguments :
+	-------------------------
+Ex :
+def Fun (no1, no2):
+	....
+	...
+Fun (10,20)
+a, b are formla parameter & 10, 20, are actual parameter 
+	there are four types of actual argument are allowed in python.
+	. Positional argument 
+	. keyword as argument 
+	. default argument 
+	. variable length argument 
+		
+	1. positional argument / required positional argument 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		. the no of arguments given at the function defination time is known as requried positional argument. 
+		these are the argumnets passed to function in correct positional order.
+		these are the argumnets passed to function in correct positional order.
+Ex :
+def Hello (no1, no2, no3) :
+	print (no1 + no2 + no3)
+Hello (3,4,5)
+Hello (1,2,3)
+	
+		. while working with required positional argument TypeError exception is expected. 
+
+def Hello (no1, no2, no3,no4) :
+	print (no1 + no2 + no3)
+Hello (3,4,5)
+Hello (1,2,3)
+		. TypeError exception can be genrated in two differnt scenario 
+			. too few argument error 
+			. too many aruments error
+	
+	2. keyword as argument / named argument 
+	--------------------------------------------------------------------
+		. to change the order of passing the argument in python keyword as arugment or named argument mechanism is used.  
+		. keyword -> resorved words -> if elif else whie for etc 
+		. in keyword as argument mechanism keyword represents to the arguments name given at the function def time. 			
+		. positional argument follows keyword argument is a SyntaxError in python. 
+		. we can pass argumnet values by keyword i.e by using parameter name .
+ex :
+def Demo (name , age , dept) :
+	print ("Hello I am", name , "& my age is",age, "dept is ", dept)
+Demo (name ="rajani", age = 23, dept = "Civil")
+Demo (dept = "Civil", name = "rajani", age = 23)
+		in this program order of argumnet is not important but number of argumnets must be matched .
+
+		Note : we can use both positional & keyword argumnets simultaneusly. but first we have to take positional argumnets and then keyword argument, other wise we will get error .
+
+def Demo (name , age , dept) :
+	print ("Hello I am", name , "& my age is",age, "dept is ", dept)
+Demo ("rajani", 23, "Civil")
+Demo ("rajani", age = 23, dept = "ME")
+Demo (name ="rajani",  23, "ME") #Error
+
+	.default argument :
+	-------------------
+		Some times we can provide default  values of our positional argumnets.
+		. to avoid TypeError exception due to too few arguments default argument mechanism is used in python. 
+
+		. default argument must be given at the time of function def 
+	
+		. if the param is not given explicitlly during function call then only default argument will be activated. 
+			
+		. default argument can be any type object. 
+
+		. non-default argument follows default argument is a SyntaxError in python. 
+ex :
+def Demo(name , cource = "programmming "):
+	print ("Hello ", name , "we learn ", cource )
+Demo ("amit", "python")
+Demo ("raja")
+
+		VARIABLE LENGTH ARGUMENT 
+		~~~~~~~~~~~~~~~~~~~~~~~~~
+		. to avoid TypeError exception due to too many arguments variable length argument mechanism is used in python. 
+
+		. to declare variable length argument UNARY * operator is used in python. 
+
+				binary * 	x * y	task 	multiplication   
+				unary  * 	* x 	task 	vlarg 
+	
+			. variable length arg is interally implemented with the help of tuple object 
+	
+def add ( * x ) :
+        print ( x ,  end = ' ' )
+        sum = 0
+        for number in x :
+                sum = sum + number
+        return sum
+
+print ( add ( 10, 20, 30 ))
+print ( add ( 10, 20 ))
+print ( add ( 10  ))
+print ( add (  ))
+
+print ( add ( 10, 20, 30, 40, 50 ) )
+print ( add ( 1 , 2, 3, 4, 5, 6, 7, 8, 9, 0 ) )
+
+	
+	

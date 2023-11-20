@@ -1,0 +1,79 @@
+Modules & Package :
+-----------------------------
+	. A group of functions, variables and classes saved to a file, which is nothing but module.
+	 .Every Python file (.py) acts as a module.
+
+Eg: jithonmath.py
+no  = 77
+
+def add(a,b):
+        print ("sum =", a+b)
+
+def avg(a,b):
+        print ("average =", (a+b)/ 2)
+
+	jithonmath modules contains one variable & two functions like add, avg 	
+	if we want to used members of modules in our program then we should import that module.
+syntax : 
+	import modulename 
+	
+	we can access members by using module name 
+	modulename. variable 
+	modulename . functionname () 
+Eg :test.py
+import jithonmath
+
+print (jithonmath.no)
+jithonmath.add (20,30)
+
+jithonmath.avg (5,2)
+
+	Note:
+	whenever we are using a module in our program, for that module compiled file will be generated and stored in the hard disk permanently.
+
+
+	Renaming a module at the time of import (module alias):
+	----------------------------------------------------------------------------------
+Eg :
+import jithonmath as jm
+
+print (jm.no)
+jm.add (20,30)
+
+jm.avg (5,2)
+	here jithonmath is orginal module name and jm is alias name 
+	we can access members by using alias name jm
+
+	the advantages of this is we can access members directly without using module .
+   	
+	from ... import
+	----------------------
+	We can import particular members of module by using from ... import .
+	The main advantage of this is we can access members directly without using module name.
+Eg :
+from  jithonmath import no, avg
+
+print (no)
+
+avg (5,2)
+#add (2,3) #NameError 
+
+	We can import all members of a module as follows
+	from jithonmath import *
+Eg:
+from  jithonmath import *
+
+print (no)
+
+avg (5,2)
+add (2,3)
+
+	Various possibilties of import:
+		import modulename
+		import module1,module2,module3
+		import module1 as m
+		import module1 as m1,module2 as m2,module3
+		from module import member
+		from module import member1,member2,memebr3
+		from module import memeber1 as x
+		from module import *

@@ -1,0 +1,196 @@
+Int class
+
+	We can represent int values in the following ways
+	
+	1. Decimal form
+	2. Binary form
+	3. Octal form
+	4. Hexa decimal form
+	
+	1. Decimal form(base-10):
+	It is the default number system in Python
+	The allowed digits are: 0 to 9
+Eg:
+>>> a =10
+>>> type (a)
+<class 'int'>
+>>> a
+10
+	
+	2. Binary form(Base-2):
+	The allowed digits are : 0 & 1
+	Literal value should be prefixed with 0b or 0B
+Eg:
+>>> a = 0B1111
+>>> type (a)
+<class 'int'>
+>>> a
+15
+a =0B123		#Error 
+a=b111		#Error
+
+	
+	3. Octal Form(Base-8):
+	The allowed digits are : 0 to 7
+	Literal value should be prefixed with 0o or 0O.
+Eg:	
+>>> a=0o123
+>>> type (a)
+<class 'int'>
+>>> a
+83
+a=0o786		#Error 
+
+	4. Hexa Decimal Form(Base-16):
+	The allowed digits are : 0 to 9, a-f (both lower and upper cases are allowed)
+	Literal value should be prefixed with 0x or 0X
+Eg:
+ 	
+>>> a =0XFACE
+>>> type (a)
+<class 'int'>
+>>> a
+64206
+
+>>> a=0XBeef
+>>> type (a)
+<class 'int'>
+>>> a
+48879
+a =0XBeer	#Error
+
+x = 10
+print (type (x), x )
+
+x= 0B10
+print (type (x), x )
+
+#x= 0b1012 Error 
+
+x= 0o10
+print (type (x), x )
+
+#x= 0o1018 Error 
+
+x = 0xf
+print (type (x), x )
+
+#x= 0x12AG #Error 
+print (type (x), x )
+
+INT DATA TYPE 
+	~~~~~~~~~~~~~~~~~~~~~~~~~
+	. int is a predfined class in python. 
+	
+	. to get the mannual of int class, 
+	>>> help ( int )
+
+	. how to create the object of int class 
+
+obj = int ()
+print ( obj, type ( obj ) )
+
+obj = int ( 10 )
+print ( obj, type ( obj ) )
+
+obj = int ( "101" , base = 10  )
+print ( obj , type ( obj ))
+
+obj = int ( "101" , base = 2 )
+print ( obj , type ( obj) )
+
+obj = int ( "101" , base = 8 )
+print ( obj , type ( obj ))
+
+obj = int ( "101" , base = 16 )
+print ( obj , type ( obj ) )
+
+obj = 10
+print ( obj , type ( obj ))
+
+obj = 0b101
+print ( obj , type ( obj ) )
+
+obj = 0o101
+print ( obj , type ( obj ))
+
+obj = 0x101
+print ( obj , type ( obj ))
+	
+
+		. python does not support garbage value. 
+		. while working with int class the default value is 0 
+	FLOAT DATA TYPE 
+	~~~~~~~~~~~~~~~~~~~~~~~~~		
+		. float is a predefined class in python 
+		. to get the mannual of float class 
+		>>> help ( float )
+	
+		. base mechanism is not aval for float class. 
+			
+		. in c cpp java to represent float value 
+			. float 	1.2f 
+			. double 	1.2 
+
+		. python does not support double data type 	
+
+		. how to create the object of float class  
+
+obj = float ()
+print ( obj , type ( obj ))
+
+obj = float ( 1.2 )
+print ( obj , type ( obj ) )
+
+obj = 11.22
+print ( obj , type ( obj ) )
+
+	COMPLEX DATA TYPE
+	~~~~~~~~~~~~~~~~~~~~~~~~
+	. complex is a predefined class in python 
+	. to get the mannual of complex class 
+	>>> help ( complex )
+	. complex object have two different attribute 
+		. real 
+		. imag : represented by j macro 
+	. how to create the object of complex class 
+obj = complex ()
+print ( obj , type ( obj ))
+
+obj = complex ( 10 )
+print ( obj , type ( obj ))
+
+obj = complex ( 10, 20 )
+print ( obj , type ( obj ))
+
+obj = 10j
+print ( obj , type ( obj ))
+
+obj = 1.2 + 2.1j
+print ( obj , type ( obj ))
+
+print ( obj . real )
+print ( obj . imag )
+	
+BOOL TYPE
+	~~~~~~~~~~
+	. bool is a predfined class aval in python
+	. to get the mannual of bool class, 
+	>>> help ( bool )
+	
+	. python is itself responsible to create the object of bool class 
+	. True and False are the object of bool class created by python / PVM. 
+			
+	 objectName = bool () 
+					
+	. bool class can not be used to create object but we can use to implement type conversion.
+
+	>>> obj =bool()
+	>>> type (obj) , obj
+	(<class 'bool'>, False)
+	>>> obj = bool (True)
+	>>> type (obj), obj
+	(<class 'bool'>, True)
+	>>> obj = False
+	>>> type (obj), obj
+	(<class 'bool'>, False)

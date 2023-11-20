@@ -1,0 +1,138 @@
+Mysql with Python:
+======================================================
+sql lan is divided into four type of primary lang :
+	1. DML : it affects records from a table
+		SELECT:
+		INSERT:
+		UPDATE:
+		DELETE:
+	2. DDL : It is used to alter or modify a database & 
+		 table structure.
+		CREATE:
+		DROP:
+		ALTER:
+	3.DCL :
+		GRANT
+		REVOKE
+	4.TCL :
+		COMMIT:
+		ROLLBACK:
+===================================================
+If we want to work with python some modules/ mysql driver are  required:
+
+Total 5 modules are avaliable in python to communicate with sql lang.
+
+	1.MySQL Connector:
+		how to install mysql connector driver / module in window
+			->	pip install mysql-connector-python
+			->	pip install mysql-connector-python==8.0.11
+		how to check driver is prsent or not:
+			in cmd :
+				>>> import mysql.connecor 
+	2.PyMySQL
+		how to install pymsql driver / module in window:
+			-> pip install pymysql
+			how to check driver / module is present or not :
+			in cmd:
+				>>> import pymysql
+
+	3.MySQLdb
+		from MySQLdb import *		-> to import MySQLdb module
+	4.mysqlclient
+	5.OurMysql
+-----------------------------------------
+Some PreDefine Methods:
+	connect(): 
+		This  method is used for creating connection to mysql server
+		it take some parameter:
+			server name
+			database user name
+			database password
+	cursor(): 
+		this method is used to create a cursor object, thsi object is capable for execute sql query
+	execute():
+		This method is used for executing sql query on a database.
+		inside execute we write sql query. 	
+	fetchone():
+	fetchall():
+	close():
+=====================================================================
+
+Program for window:
+#mysql connector driver
+
+import mysql.connector as mysql
+
+conobj =mysql.connect(
+		host ="localhost",
+		user ="",
+		password =""
+)
+
+curobj = conobj.cursor()
+curobj.execute("show databases")
+data = curobj.fetchall()
+print (data)
+curobj.close()
+conobj.close()
+
+===========================================
+#for pymysql 
+
+import pymysql
+conobj =pymysql.connect(host ="localhost",
+		user ="",
+		password =""
+		)
+curobj = conobj.cursor()
+curobj.execute("show databases")
+
+curobj.close()
+
+conobj.close()
+=========================
+#Program for Linux:
+
+from MySQLdb import *
+conobj = connect('localhost','','')
+curobj = conobj.cursor()
+
+# show all database
+curobj.execute("show databases")
+database_list = curobj.fetchall()
+print ("list of all database:")
+for name in database_list:
+	print (name)
+
+#create a database
+
+#curobj.execute("create database TEST1")
+
+#select databse
+curobj.execute("use TEST1")
+#create a table
+#curobj.execute("create table dept (deptid int,deptname varchar(20),fact_name varchar(20))")
+curobj.execute("show tables")
+list_table = curobj.fetchall()
+print ("list of table name:",list_table)
+'''
+#insert record
+curobj.execute("insert into dept values (1,'CSE','SKD')")
+curobj.execute("insert into dept (fact_name,deptid,deptname)values ('skp',2,'ECE')")
+curobj.execute("insert into dept values (3,'ME','SKR')")
+curobj.execute("insert into dept values (4,'CSE','SKD')")
+curobj.execute("insert into dept values (5,'ECE','SKP')")
+'''
+
+#delete a record
+curobj.execute(" delete from dept where deptname ='ME' ")
+curobj.execute(" drop table dept ")
+'''
+#fetch record
+curobj.execute("select * from dept")
+record = curobj.fetchall()
+for x,y,z in record:
+	print (x,y,z)
+'''
+curobj.close()
+conobj.close()

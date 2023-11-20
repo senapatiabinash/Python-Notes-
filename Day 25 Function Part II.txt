@@ -1,0 +1,84 @@
+Function :
+----------------------------------
+	while working with function variable is besically two types in python, 
+		. GLOBAL VARIABLE 
+		. LOCAL VARIABLE 
+		
+		GLOBAL VARIABLE : 
+		~~~~~~~~~~~~~~~~~~~
+		. if a variable is not belongs to any function that var is known as global var. 
+			
+		. global var is not belongs to any function but any function can enjoy global var. 
+var = 10
+def main () :
+        print ( 'i am main enjoying ' , var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )
+
+
+		. any function can enjoy global var, but can not modify the global var. 
+	
+		. if we try to modify the global var from a function it will raise UnboundLocalError exception. 
+var = 10
+def main () :
+        var = var + 10  # modify the global data  
+        print ( 'i am main enjoying ' , var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )
+
+		. to avoid UnboundLocalError exception while modifying the global var we have use `global` keyword. 
+	
+		. if a function modified the global var that modification is going to reflect in other function also. 
+var = 10
+def main () :
+        global var
+        var = var + 10  # modify the global data  
+        print ( 'i am main enjoying ' , var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )
+
+		LOCAL VAR : 
+		~~~~~~~~~~~~~~~~~~~~~~
+		. the var which is belongs to a function is known as local var. 
+	
+		. local var of a function can only be enjoyed in that function where it is local, not from other function. 	
+		
+		. if we try to enjoy the local var of a function in another function it will raise NameError exception. 
+def main () :
+        var = 10
+        print ( 'i am main enjoying ', var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var )
+main ()
+	
+		. to avoid NameError exception while ejoying the local var of one function in another function 
+		there are two different mechanisms are aval in python, 
+		. GLOBAL KEYWORD MECHANISM
+		. ARGUMENT OR PARAMETER MECHANISM 	( most preferable )
+
+global keyword mechanism 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def main () :
+        global var
+        var = 10
+        print ( 'i am main enjoying ', var )
+        bbsr ()
+def bbsr () :
+        print ( 'i am bbsr enjoying ', var , 'by global keyword mechanism !')
+
+main ()
+
+argument or parameter mechanism 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def main () :
+        var = 10
+        print ( 'i am main enjoying ', var )
+        bbsr ( var )
+def bbsr ( var ) :
+        print ( 'i am bbsr enjoying ', var , 'by argument or param mechanism!')
+
+main ()

@@ -1,0 +1,134 @@
+File Handling :
+--------------------
+	The with statement:
+	------------------------------
+		The with statement can be used while opening a file.We can use this to group file operation statements within a block.
+		The advantage of with statement is it will take care closing of file,after completing all  operations automatically even in the case of exceptions also, and we are not required to close explicitly.
+
+Eg :
+with open("abc.txt","w") as f: 
+	f.write("jithon\n") 
+	f.write("python\n") 
+	f.write("program\n") 
+	print("Is File Closed: ",f.closed) #False 
+print("Is File Closed: ",f.closed) #True
+
+	The seek() and tell() methods:
+	-----------------------------------------
+		We can use tell() method to return current position of the cursor(file pointer) from beginning of the file. 
+		The position(index) of first character in files is zero just like string index.
+Eg :
+f=open("lit.txt","r") 
+print(f.tell()) 
+print(f.read(2)) 
+print(f.tell()) 
+print(f.read(3)) 
+print(f.tell()) 
+print (f.close)
+	
+	
+		We can use seek() method to move cursor(file pointer) to specified location
+		Synatx : f.seek(offset, fromwhere)
+ata ="Hello  Python is Easy!"
+f= open ("lit.txt", "w")
+f.write (data)
+with open ("lit.txt", "r+") as f :
+        text = f. read()
+        print (text, "current cursor position:",f.tell ())
+        f.seek (15)
+        print ("current cursor position:",f.tell ())
+        f.write ("jithon")
+        f.seek (6)
+        text = f.read ()
+        print ("after modify")
+        print (text)
+
+	How to check a particular file exists or not?
+	---------------------------------------------------------------
+		We can use os library to get information about files in our computer.
+		os module has path sub module,which contains isFile() function to check whether a particular file exists or not?
+		os.path.isfile(fname)
+#Write a program to check whether the given file exists or not. If it is available then print its content?
+import os,sys
+fname=input("Enter File Name: ")
+if os.path.isfile(fname):
+        print("File exists:",fname)
+        f=open(fname,"r")
+else:
+        print("File does not exist:",fname)
+        sys.exit(0)
+print("The content of file is:")
+data=f.read()
+print(data)
+
+
+#Program to print the number of lines,words and characters present in the given file?
+import os,sys
+fname=input("Enter File Name: ")
+if os.path.isfile(fname):
+        print("File exists:",fname)
+        f=open(fname,"r")
+else:
+        print("File does not exist:",fname)
+        sys.exit(0)
+lcount=wcount=ccount=0
+for line in f:
+        lcount=lcount+1
+        ccount=ccount+len(line)
+        words=line.split()
+        wcount=wcount+len(words)
+print("The number of Lines:",lcount)
+print("The number of Words:",wcount)
+print("The number of Characters:",ccount)
+
+Handling Binary Data:
+It is very common requirement to read or write binary data like images,video files,audio 
+files etc.
+#Program to read image file and write to a new image file?
+f1=open("download.jfif","rb")
+f2=open("new.JPG","wb")
+bytes=f1.read()
+f2.write(bytes)
+print("New Image is available with the name: newpic.jpg")
+
+Handling csv files:
+
+CSV==>Comma seperated values
+As the part of programming,it is very common requirement to write and read data wrt csv 
+files. Python provides csv module to handle csv files.
+
+	Writing data to csv file:
+	--------------------------------
+import csv
+with open("emp.csv","w",newline='') as f:
+        w=csv.writer(f) # returns csv writer object 
+        w.writerow(["ENO","ENAME","ESAL","EADDR"])
+        n=int(input("Enter Number of Employees:"))
+        for i in range(n):
+                eno=input("Enter Employee No:")
+                ename=input("Enter Employee Name:")
+                esal=input("Enter Employee Salary:")
+                eaddr=input("Enter Employee Address:")
+                w.writerow([eno,ename,esal,eaddr])
+print("Total Employees data written to csv file successfully")
+
+
+	Reading Data from csv file:
+import csv 
+f=open("emp.csv",'r') 
+r=csv.reader(f) #returns csv reader object 
+data=list(r) 
+#print(data) 
+for line in data: 
+	for word in line: 
+	print(word,"\t",end='') 
+      print()
+
+
+
+
+                                                            
+
+
+
+

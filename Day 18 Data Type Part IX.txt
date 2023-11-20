@@ -1,0 +1,175 @@
+bytes Data Type:
+	bytes data type represens a group of byte numbers just like an array.
+ex :
+x = [10,20,30,40] 
+b = bytes(x)
+
+Conclusion 1:
+	The only allowed values for byte data type are 0 to 256. By mistake if we are trying to provide any other values then we will get value error.
+
+Conclusion 2:
+	Once we creates bytes data type value, we cannot change its values,otherwise we will get TypeError.
+>>> x=[10,20,30,40] 
+>>> b=bytes(x) 
+>>> b[0]=100  #TypeError: 'bytes' object does not support item assignment
+
+bytearray Data type:
+	bytearray is exactly same as bytes data type except that its elements can be modified.
+ex : 
+x=[10,20,30,40] 
+b = bytearray(x)
+print (b)
+x[1] = 200
+print (b)
+String Data Types :
+--------------------------
+
+	. str is a predefined class in python. 
+	. to get the mannual of str class, 
+		>>> help ( str )
+	. how to create object of str class,  
+obj = str ()
+print ( obj , type ( obj ))
+
+obj = str ( "india" )
+print ( obj , type ( obj ))
+
+obj = "ithon"
+print ( obj , type ( obj ))
+
+obj = 'a'
+print ( obj , type ( obj ))
+
+obj = 'abc'
+print ( obj , type ( obj ))
+
+obj = '''this is 
+an example 
+of multiline string'''
+print ( obj , type ( obj ) )
+
+obj = """welcome to 
+the python class 
+by Sujit sir"""
+print ( obj , type ( obj ))
+	. Any sequence of characters within either single quotes or double quotes is considered as a String.
+	. python does not support char data type. 
+	. in python char is also represented as str object. 
+	. tripple quote is used for multiline string. 
+	. anonymus string object is used for comment line also. 	
+	. the object having no any name is known as anonymus object.
+	. to get the length of a string object we can apply len () function. 
+	. str object does not support item assignemnt or item deletion. 
+	. we can not modify string object in future.
+	. string object is immutable object in python. 
+INDEXING : 
+	. to target a specific char in a string object  we can apply index mechanism.
+	. by using index we can perfrom read operation with string object 
+	. by using index we can not perfrom  write / update / delete operation with string object. 
+	. to provide index with string object we have to use subscript operator 
+		strObj [ index ]
+	. +ve index range 0 to len - 1 
+	. -ve index supported by str object. 
+	. -ve index range -len to -1 
+	OPERATORS
+		all the operator aval in python is not going to supported with str object 
+			
+			. arithmatic 
+				+ 	concatination 
+				* 	repetation 
+			. realtional 
+				relational operator in a string object 
+				works according to ASCI value. 
+			. membership 
+				in 
+				not in 
+				return bool type object ( True / False )
+	
+				is 
+				is not
+s1 = "Hello Sir"
+s2 = "Hello Sir"
+print ("sir" in s1 )
+print ("H" in s1 )
+print ("h" in s1 )
+print (" " in s1 )
+print (s1 is s2)
+s3 = "Hello sir"
+print (s1 is s3 )
+	
+			
+Ex:
+# arithmatic 
+obj1 = 'hello '
+obj2 = 'sir'
+obj = obj1 + obj2
+print ( obj )
+#obj = obj1 + 10                TypeError  
+obj = obj1 + str ( 10 )
+print ( obj )
+obj = 'hi ' * 3
+print ( obj )
+
+# relational operator 
+print ( 'a' < 'b' )
+
+# slicing 
+strObj = 'india'
+print ( strObj [ 1 : 4 ] )
+print ( strObj [ 1 : 4 : 2 ])
+print ( strObj [ : : -1 ])
+	
+	FUNCTIONS 
+			len () 
+			max () 
+			min () 
+			sum ()		: can not work with string bcz str + int is not permited in python 
+			ord (  )	to get the asci value of a specific char
+			chr (  ) 	to get the char from asci value  
+str = "Python"
+print ("max element =", max(str))
+print ("min element =", min(str))
+print ("length of list  =", len(str))
+#print ("sum =", sum (str))#Error
+s= "A"
+print ("ASCII value of A=",  ord (s))
+s1= 90
+print ("char of 90=",  chr (s1))
+
+
+Methods :
+	for change case :
+
+	. upper ()
+	. lower ()
+	. title ()
+	. swapcase()
+	. capitalize()
+
+	. split ()
+	. splitlines ()
+	. zfill()
+	.join ()
+
+s = "A$ab$$abc$abcd$$abcde"
+print (s.split ("$"))
+print (s.split ("$", 2))
+
+print (s. partition("$",) ) #from left side it will partition 
+print (s. rpartition("$",) )# from right side it will partition
+s1 = '''Heloo c
+        hello C++
+        Hello Java 
+        hello Py'''
+print (s1)
+print (s1.split ("\n"))
+print (s1.splitlines ()) #split line wise 
+
+s2 = "1"
+print (s2)
+print (s2.zfill (5))  #zerofill 
+
+s3 = "abc"
+print (",". join (s3))
+
+print ("==". join (s3))

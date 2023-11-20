@@ -1,0 +1,102 @@
+METHODS : 
+	-------------------
+	in list class many predefined methods are aval, to call a method 
+		objectName . methodName () 
+		
+			INSERTION METHOD 
+				. append (self, object ) 		-> 	insert an element at last 
+				. insert (self, index, objcet ) 		-> 	insert an element in a spcific position 
+				. extend (self , list object )		-> 	insert a group of list element at last 
+				 
+listObj = [ 11, 22, 44, 55 ]
+
+print ( listObj , len ( listObj ))
+listObj . append ( 66 )
+print ( listObj , len ( listObj ))
+listObj . append ( 10 )
+print ( listObj , len ( listObj ))
+
+listObj . insert ( 2 , 33 )
+print ( listObj )
+
+listObj . extend ( [ 100, 200, 300 ] )
+print ( listObj )
+
+
+			DELETION METHOD 
+				. pop () 	  	-> 	delete an element from last 
+				. pop ( position )	-> 	delete an element by taking posing 
+						-> 	raises indexError if list isempty or for invalid index 
+				. remove ( value )	-> 	remove first occurrance of value 
+					 	->	raises valueError if the valule is not present
+				. clear () 		  -> 	delete all the elements 
+	
+			COUNT METHOD 	count (selft, value) 	-> return number of occurrence of value 
+			
+			INDEX METHOD 	index (self, value , start , stop)	->return first index value
+								-> raises valueError if value is not present 
+	
+			SORT METHOD 	sort (self , reverse = False/ True)	-> sort list in assending order (reverse= False  )
+									-> sort list in decending order (reverse= True  )
+		
+			REVERSE METHOD 	reverse () 		-> reverse given list
+
+			COPY METHOD 	copy ()		-> Return a shallow copy of the list.	 
+
+listObj = [ 11, 22, 44, 55, 100, 200, 100, 11, 500, 300  ]
+print ( listObj )
+listObj . pop ()
+print ( listObj )
+listObj . pop ( -3 )
+print ( listObj )
+
+listObj . remove ( 100 )
+print ( listObj )
+
+print ( listObj . count ( 11 ))
+listObj . remove ( 11 ) # delete the first occur only 
+print ( listObj )
+
+print ( listObj . index ( 11 ) )
+
+listObj . sort ()
+print ( listObj )
+
+listObj . sort ( reverse = True )
+print ( listObj )
+
+Note :
+	Differences between remove()  and pop()
+Note:
+remove 
+	1) We can use to remove special element from the List. 
+	2) It can’t return any value.
+	3) If special element not available then we get VALUE ERROR.
+pop
+	1) We can use to remove last element from the List.
+	2) It returned removed element.
+	3) If List is empty then we get Error.
+	
+	
+	Differences between append() & insert ()
+append() 
+	In List when we add any element it will come in last i.e. it will be last element.
+insert()
+	In List we can insert any element in particular index number
+
+Nested List as Matrix:
+	Sometimes we can take one list inside another list. Such type of lists are called nested lists.
+ex :
+n=[10,20,[30,40]] 
+print(n) 
+print(n[0]) 
+print(n[2]) 
+print(n[2][0]) 
+print(n[2][1]) 
+ex :
+obj = [ [10,20,30], [11,22,33], [-10,-20, 30], ['a','e','i','o','u']]
+print (obj)
+print ( obj [1])
+print ( obj [1][::-1 ])
+
+

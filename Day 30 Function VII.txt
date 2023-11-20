@@ -1,0 +1,89 @@
+Function Recursion 
+-------------------------------
+	A function that calls itself is known as Recursive Function.
+ex :
+def Main () : #function defination
+	print ("i am a recursion function")
+	Main () #function  calling  itself
+
+Main () #function calling
+
+	The main advantages of recursive functions are:
+	1. We can reduce length of the code and improves readability
+	2. We can solve complex problems very easily.
+Q. Write a Python Function to find reverse  of given number with recursion
+Q. Write a Python Function to find sum of digit of given number with recursion
+Q. Write a Python Function to find factorial of given number with recursion
+
+	map  : 
+	---------
+	. map is a predefined class in python belongs to builtins module  
+
+	. Syntax to create map object 
+			mapObj = map ( function , sequence/collection )		
+	
+	. map is used to apply a specific function on each indivisual element aval in collection 
+	 
+	. to fetch the value from mapObject we have to implement type conversion mechanism 
+	print ( list ( mapObj )) 
+Ex :
+def factorial ( no ) :
+        fact = 1
+        while no > 0 :
+                fact = fact * no
+                no = no - 1
+        return fact
+
+print ( factorial ( 5 ) )
+
+collection = [ 1, 5, 3, 2, 4 ]
+# i want to call factorial function for each indivisual element aval in
+# collection 
+mapObj = map ( factorial , collection )
+print ( collection )
+print ( list ( mapObj )  )
+
+Ex :
+collection = [ 1, 2, 3, 4, 5 ]
+print ( collection )
+print ( list ( map ( lambda number : Even if number % 2 == 0 else  Odd , collection ) ) )
+
+	filter :
+	-------
+	. filter is a predefined class aval in python belongs to builtins module 
+	. Syntax to crate the object of filter class, 
+				filterObj = filter ( function , collection/sequence/iterable  )
+			
+	. filter is used to filter a collection as per the demand of a function 
+	. what the function we are going to use for filter that function must return True or Flase 
+	. if for an element the result is True that element will be selected 
+	. if the result is False then that element will be rejected 
+	
+	. to get the values from filter object we have to implment type conversion mechanism 
+		print ( list ( filterObj )) 
+
+collection = [ 1, 2, 3, 4, 5 ]
+
+print ( collection )
+
+print ( list ( map ( lambda number : True if number % 2 == 0 else  False ,collection ) ) )
+
+print ( list ( filter ( lambda number : True if number % 2 == 0 else  False ,collection ) ) )
+
+	reduce :
+	------------
+
+	. reduce is a predfined function in python belongs to functools module 	
+	. from functools import reduce 		# compulsory 
+	
+	. to call reduce function param are 
+		reduce ( function , sequence/collection/iterable )
+
+from functools import reduce
+
+max = lambda x, y : x if x > y else y
+
+collection = [ 1, 3, 2, 5, 4 ]
+
+print ( reduce ( max , collection ) )
+print ( reduce ( lambda x, y : x if x > y else y , collection ) )

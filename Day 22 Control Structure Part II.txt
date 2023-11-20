@@ -1,0 +1,115 @@
+Control Statment
+while Loop:
+	in c / c++ / java
+	------------
+	initilization;
+	while( condition )
+	{
+		body;
+		update value;
+	}
+	
+	in Python:
+	initialization
+	while condition :
+		body
+		update value
+
+Example 1: Print python 5 Times using while loop.
+from time import sleep
+i = 1
+while i <= 5 :
+	print ( "hello")
+	i += 1
+	sleep( 1) #in sec
+
+Example 2 : Print 1 to 10 in one Line.
+i =1
+while i <= 10:
+	print (i) #print (i,end = ' ')
+	i += 1
+
+Example 3 :To display the sum of first n numbers
+n=int(input("Enter number:")) 
+sum=0 
+i=1 
+while i<=n: 
+	sum=sum+i 
+	i=i+1 
+print("The sum of first",n,"numbers is :",sum) 
+
+Example 3 :write a program to prompt user to enter some name until entering jithon
+name="" 
+while name!="jithon": 
+	name=input("Enter Name:") 
+print("Thanks for confirmation")
+
+Example 3: Print multiplication table of a number 
+			
+number = int(input('Enter a number'))
+i =1
+while  i <= 10:
+	print ( i * number, end = " ")
+	i += 1
+
+Example 4 : Print Multiplication table of 1 to 10
+from time import sleep
+number = 1
+while number <= 10:
+        i =1
+        while i <= 10:
+                print ( i * number, end = ' ')
+                i += 1
+        number +=1
+        print ()
+        sleep(1)
+#wap to take a number is user input & count how many digits are aval
+x= int (input ("Enter  a number"))
+'''
+count = 0
+while x != 0 :
+        count +=1
+        x //= 10
+print (count)
+'''
+print (len (str (x)))
+
+#wap to take a number is user input & count how many digits are aval  & from   that digits display only even number
+x= int (input ("Enter  a number"))
+count = 0
+while x != 0 :
+        count+=1
+        n = x % 10
+        if n % 2 == 0 :
+                print ("even number=",n, end = "  ")
+        x//=10
+print ("\nnumber of digits=",count)
+
+#wap to display first n number where n value given by user , from that number   find sum of all even & product of all odd
+
+n= int (input ("Enter  N value "))
+i =1
+sum = 0
+odd= 1
+while i <= n :
+        print (i)
+        if i % 2 == 0 :
+                sum = sum + i
+        else :
+                odd = odd * i
+        i+=1
+print ("\nsum of all even=", sum)
+print ("product of all odd =", odd)
+
+#Wap to  find all factors & count number fo factors  and check that number is  prime
+no = int (input ("Enter a number"))
+i =1
+list = []
+while i <= no :
+        if no % i == 0 :
+                list.append (i)
+        i+=1
+print (list, "number of factors", len (list))
+print ("prime" if len (list) == 2 else "not prime")
+
+

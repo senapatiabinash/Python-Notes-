@@ -1,0 +1,86 @@
+. SLICING
+	slicing operator is besically two types in python  
+
+	listObj [ index ]	-> 	to target a specific element 
+	SLICING 		-> 	TO TARGET A GROUP OF ELEMENT 
+
+	. REGULAR SLICING 
+
+		listObj [ startIndex : stopIndex ]
+Ex :
+#ind   -7  -6  -5  -4  -3  -2  -1
+obj = [10, 20, 30, 40, 50, 60, 70]
+#inx    0  1   2   3   4   5   6
+print ( obj [4]) # 50
+print ( obj [ : ])
+print ( obj [ 2 : ])
+print ( obj [ 5 : ])
+print ( obj [ 6 : ])
+print ( obj [  :4 ])
+print ( obj [ 1  : 5 ])
+print ( obj [   4: 5 ])
+print ( obj [   4: 4 ])
+print ( obj [ -1 : ])
+print ( obj [ -4 : ])
+print ( obj [ -6 : -2])
+
+
+	. EXTENDED SLICING 
+						
+		listObj [ startIndex : stopIndex : stepIndex ]
+Ex :
+#ind   -7  -6  -5  -4  -3  -2  -1 
+obj = [10, 20, 30, 40, 50, 60, 70]
+#inx    0  1   2   3   4   5   6 
+print ( obj [  : : ])
+print ( obj [  : : 2 ])
+print ( obj [  : : 3 ])
+print ( obj [ 2  : : 2 ])
+print ( obj [   :6 : 3 ])
+print ( obj [ 1  : 5 : 3 ])
+print ( obj [ 1  : 5 : 4 ])
+print ( obj [ 3 : 3 : 3  ])
+print (obj [-1 : : ])
+print (obj [-1 : : 2 ])
+print (obj [-1 : -5 : 2 ])
+print (obj [-5 :  : 2 ])
+print (obj [ :  : -1 ])
+print (obj [ -1 :  : -1 ])
+print (obj [ 2 : -3 :  ])
+print (obj [ 1 : -1 : 2 ])
+
+FUNCTIONS :
+	some predefined function aval in python we can apply with list object, 
+	
+	. len () 	-> 	to get the number of elements aval in list object 
+	. max () 	->	to get max element from list object
+	. min () 	->	to get min element from list object
+	. sum () 	->	to get sum of all element from list object
+	. sorted ()		 	assending order  
+	. sorted ( reverse = True )	dessending order 
+					
+
+
+
+listObj = [ 1, 5, 10, 3, 4 ]
+print ( len ( listObj ))
+print ( max ( listObj ))
+print ( min ( listObj ))
+print ( sum ( listObj ))
+print ( sorted ( listObj ))
+print ( sorted ( listObj, reverse = True  ))
+
+Nested List as Matrix:
+	Sometimes we can take one list inside another list. Such type of lists are called nested lists.
+ex :
+n=[10,20,[30,40]] 
+print(n) 
+print(n[0]) 
+print(n[2]) 
+print(n[2][0]) 
+print(n[2][1]) 
+ex :
+obj = [ [10,20,30], [11,22,33], [-10,-20, 30], ['a','e','i','o','u']]
+print (obj)
+print ( obj [1])
+print ( obj [1][::-1 ])

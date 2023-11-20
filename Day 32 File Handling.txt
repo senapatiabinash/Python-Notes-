@@ -1,0 +1,97 @@
+File Handling :
+--------------------
+	to perform any operation we need information or data 
+
+	to handle data upto yet we worked through variables
+						life or scope 		
+		. LOCAL VAR 		upto the end of a function 
+		. GLOBAL VAR 		upto the end of the program 
+	
+		if the information is stored inside a local var the life of that information upto the end of that function. 
+	
+		if the information is stored inside a global var the life of that inforamtion upto the end of the program. 
+	
+		to provide the life of the information beyond the program we have to deal with file. 
+	As the part of programming requirement, we have to store our data permanently for future purpose. 
+	For this requirement we should go for files.
+	Files are very common permanent storage areas to store our data
+		file allocates memory from HD. 
+	
+		HD is a non valatile memory. 	
+
+		with a file how many types of operation we can perform, 
+			. read 	
+			. write 
+	
+	Types of Files:
+	There are 2 types of files
+	1. Text Files:
+		Usually we can use text files to store character data
+		eg: abc.txt
+	2. Binary Files:
+		Usually we can use binary files to store binary data like images,video files, audio files etc...
+	Opening a File:
+	---------------------
+		Before performing any operation (like read or write) on the file,first we have to open that file
+		.For this we should use Python's inbuilt function open()
+		But at the time of open, we have to specify mode,which represents the purpose of opening file.
+	Syntax :
+	f = open(filename, mode)
+	
+	Closing a File:
+	--------------------
+		After completing our operations on the file,it is highly recommended to close the file.
+		For this we have to use close() function.
+	Syntax :
+	f.close()
+	mode :
+	----------
+	The allowed modes in Python are
+	r
+	r+
+	w
+	w+
+	a
+	a+
+	Note: All the above modes are applicable for text files. If the above modes suffixed with 'b' then these represents for binary files.
+	Eg: rb,wb,ab,r+b,w+b,a+b,xb
+
+	Once we opend a file and we got file object,we can get various details related to that file by using its properties.
+		name -> Name of opened file
+		mode -> Mode in which the file is opened
+		closed -> Returns boolean value indicates that file is closed or not
+		readable()-> Retruns boolean value indicates that whether file is readable or not
+		writable() -> Returns boolean value indicates that whether file is writable or not
+eg:
+f=open("abc.txt",'w') 
+print("File Name: ",f.name) 
+print("File Mode: ",f.mode) 
+print("Is File Readable: ",f.readable()) 
+print("Is File Writable: ",f.writable()) 
+print("Is File Closed : ",f.closed) 
+f.close() 
+print("Is File Closed : ",f.closed)
+
+Writing data to text files:
+----------------------------------
+	We can write character data to the text files by using the following 2 methods.
+		write(str)
+	writelines(list of lines)
+Eg: using write function 
+
+f=open("abcd.txt",'w') 
+f.write("litindia\n") 
+f.write("jithon\n") 
+f.write("python\n") 
+print("Data written to the file successfully") 
+f.close() 
+
+Eg : using writelines function 
+
+f=open("abcd.txt",'w') 
+list=["C Program\n","C++ Program\n","Java Program\n","Python Program"] 
+f.writelines(list) 
+print("List of lines written to the file successfully") 
+f.close()
+
+	

@@ -1,0 +1,128 @@
+Control Structure
+--------------------------
+	Contitional Control Structure
+		if 
+		if elif
+		if elif else
+	Loop / Iterative Control Structure
+		while 
+		for 
+	selection 
+	Control Statements :
+		break 
+		continue
+		pass
+==========================
+if:
+Syntax :
+if condition : statement
+or
+if condition :
+	statement-1
+	statement-2
+ 	statement-3
+If condition is true then statements will be executed.
+EX :
+#check a number is +ve 
+no =int (input ("Enter a number"))
+if  no > 0 : print ("+ve number")
+or
+no =int (input ("Enter a number"))
+if  no > 0 : 
+	print ("+ve number")
+
+if-else:
+Syntax :
+if condition :
+	Action-1
+else :
+	Action-2
+
+if condition is true then Action-1 will be executed otherwise Action-2 will be executed.
+ex:
+#check a number is +ve or -ve  
+no =int (input ("Enter a number"))
+if  no > 0 : 
+	print ("+ve number")
+else :
+	print ("-ve number")
+
+if-elif-else:
+
+Syntax:
+
+if condition1:
+ 	Action-1
+elif condition2:
+	 Action-2
+elif condition3:
+ 	Action-3
+elif condition4:
+ 	Action-4
+ ...
+else:
+ 	Default Action
+Based condition the corresponding action will be executed
+Ex :
+#check a number is +ve or -ve or zero  
+no =int (input ("Enter a number"))
+if  no > 0 : 
+	print ("+ve number")
+elif no < 0 :
+	print ("-ve number")
+else:
+	print ("equal to zero")
+Example 1: Check a number is even or odd.
+	
+		no = int ( input ( 'Enter a number : '))
+
+		if no % 2 == 0 : 
+ 			print ( 'hi hi !') 
+ 			print ( 'i am even !') 
+
+		else : 
+			print ( 'i am odd !' ) 
+
+
+		print ( 'bye bye Program  !')
+
+	Example 2: Greate between three number.
+
+		no1 = int ( input ( ' Enter no1 :' )) 
+		no2 = int ( input ( ' Enter no2 :' )) 
+		no3 = int ( input ( ' Enter no3 :' )) 
+		if no1 > no2 :
+			if no1 > no3 :
+				max = no1
+			else :
+				max = no3
+		else:
+			if no2 > no3 :
+				max = no2
+			else:
+				max = no3
+		print (max, "is max number")
+
+	
+	Example 3:
+		minTime = 8
+		maxTime = 16
+
+		workingTime = int ( input ( 'Enter your working time : '))
+
+		if minTime <= workingTime <= maxTime :
+
+       			if workingTime == 8 :
+               			 payment = 200
+
+       			 elif workingTime > 8 and workingTime < 13 :
+              			  payment = 200 + ( workingTime - 8 ) * 50
+       			 else :
+              			  payment = 200 + 200 + ( workingTime - 12 ) * 100
+
+       			 print ( 'your payment is :, payment )
+
+		else :
+			print ( 'INVALID TIME ENTERED !')	
+		
+

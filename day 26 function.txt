@@ -1,0 +1,156 @@
+ARGUMENT OR PARAMETER 
+~~~~~~~~~~~~~~~~~~~~~~~
+	. to enjoy the local attr of one function in another function
+
+	. parameter or argument is besically two types in python 
+		. ACTUAL PARAM 
+		. FORMAL PARAM 
+
+	. the param related to function call is known as actaul param. 
+	
+	. the pram related to function defination is known as formal param. 
+
+	. actual pram name and formal param name may be same or may be different.
+	
+	. the name used for param is an Identifier.  
+	
+	. the name of param will be decided by the user as per the demand of situation. 
+			
+	. param can be any type of object in python 
+	. we can use any type of object as param in python. 
+	. param may be 
+		predefined like
+			int , float , complex , bool, NoneType ,list , tuple , str , set , dict ,range , frozenset , user defined type 
+
+	. we can use N of object as parameter 
+
+def main () :
+
+        a = 10
+        b = 1.2
+        c = "india"
+        d = [ 11, 22, 33 ]
+
+        print ( 'i am main enjoying ' , a , b , c , d  )
+        bbsr ( a , b , c , d  )         # function call stmt  
+
+def bbsr ( a , b , c , d ) :            # function def stmt 
+
+        print ( 'i am bbsr enjoying ' , a , b , c , d  )
+
+main ()
+	python does not support call by value mechanism 
+	python only works according to call by ref mechanism. 
+			
+	in python call by ref mechanism can behave in two different ways, 
+
+		. call by ref as call by ref
+			by modifying an object if the location / id / address / ref is same  
+				
+			list object as param ,set object ,dict object 
+	
+		. call by ref as call by value 
+			by modifying an object if the location / id / address / ref is different  
+				
+			int object as param ,float object ,complex object ,str object ,tuple object 
+
+int object as parameter 
+~~~~~~~~~~~~~~~~~~~~~~~~
+def bbsr ( fp ) :
+        print ( 'info of formal param before modification : ', fp , id ( fp ))
+        # modify fp 
+        fp = fp + 10
+        print ( 'info of formal param after  modification : ', fp , id ( fp ))
+        return fp
+
+def main () :
+        ap = 10
+        print ( 'info of actual param : ' , ap , id ( ap ) )
+        ap = bbsr ( ap )
+        print ( 'info of actual param : ' , ap , id ( ap ) )
+
+main ()
+
+list object as parameter 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+def bbsr ( fp ) :
+        print ( 'info of formal param before modification : ', fp , id ( fp ))
+        fp . append ( 40 )
+        fp . append ( 50 )
+        print ( 'info of formal param aftre  modification : ', fp , id ( fp ))
+
+def main () :
+        ap = [ 10, 20, 30 ]
+        print ( 'info of actual param : ' , ap , id ( ap ) )
+        bbsr ( ap )
+        print ( 'info of actual param : ' , ap , id ( ap ) )
+
+
+main ()
+
+str object as param 
+~~~~~~~~~~~~~~~~~~~
+def bbsr ( fp ) :
+        print ( 'info of formal param : ', fp , id ( fp ) )
+        fp = fp . upper ()
+        print ( 'fp : ' , fp )
+        return fp
+
+def main () :
+        ap = "india"
+        print ( 'info of actual param : ' , ap , id ( ap ) )
+        ap = bbsr ( ap )
+        print ( 'ap : ', ap )
+
+main ()
+
+
+
+	return stmt 
+	~~~~~~~~~~~~
+		. to affect the actual param through formal param in call by value return stmt will be applicable. 
+	
+		. return stmt is used to terminate a function. 
+		 But break stmt is used to terminate a loop. 
+	
+		. return stmt is not allowed without function.  
+			
+		. we can use multiple return stmt in a function. 
+
+		. LIMITATION : return stmt can not return more then one values in c cpp java. 
+		
+		. the default return type of a function in python is None. 
+
+		. in python return stmt can return more then one value as tuple object. 
+
+		. return stmt in python can return N no of values also N types of values. 
+
+			. PACKING 
+				box = 10, 20, 30 
+
+			. UNPACKING 
+				by using index 
+					x = box [ 0 ]
+					y = box [ 1 ] 
+					z = box [ 2 ]
+				without using index 
+					x , y , z = box 
+
+def bbsr () :
+        print ( 'hi hi ')
+        return 10, 20.12 , 1+2j , "india", [1,2,3]
+        return 100
+        print ( 'bye bye ')
+
+def main () :
+
+        k = bbsr ()
+        print ( k , type ( k ) )
+
+        box = bbsr ()
+        a , b , c , d , e = box
+        print ( box , type ( box ))
+        print ( a , type ( a ) , b , type ( b ), c , d , e )
+
+        a , b , c , d , e = bbsr ()
+        print ( a , type ( a ) , b , type ( b ), c , d , e , type ( e ) )

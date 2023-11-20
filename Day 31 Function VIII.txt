@@ -1,0 +1,27 @@
+GENERATOR FUNCTION : 
+-------------------------------------
+	Generator is a function which is responsible to generate a sequence of values
+			
+	. if a function contains yield keyword that function is known as generator function. 
+	
+	. the default return type of generator function it not None 
+
+	. the default return type of generator function is a generator object. 
+	
+	. to fetch the value from generator object we have to use next () predefined function. 
+	
+	. if we will apply next () after fetching all values it will raise StopIteration exception. 
+	
+def channelGenerator () :
+        subchlist = [ 'start sports', 'max', 'sony', 'nd tv', 'discovery' ]
+        for channel in subchlist :
+                yield channel
+
+remote = channelGenerator ()
+print ( next ( remote ) )
+print ( next ( remote ) )
+print ( next ( remote ) )
+print ( next ( remote ) )
+print ( next ( remote ) )
+print ( next ( remote ) )
+
